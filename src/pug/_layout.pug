@@ -1,0 +1,20 @@
+block vars
+include /_modules/_mixins
+doctype html
+html(lang="ja")
+  head
+    include /_modules/_head_meta
+    include /_modules/_head_link
+
+  body#body(class='p-'+key)
+    #wrapper.l-wrapper
+      include /_modules/_header
+
+      main#main.l-main
+        block main
+      //- end of main
+
+      include /_modules/_footer
+
+    include /_modules/_footer_link
+  //- end of body

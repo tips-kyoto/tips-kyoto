@@ -1,0 +1,11 @@
+mixin img(path, ext)
+  img(src="/images"+path+ext)&attributes(attributes)
+
+mixin img2x(path, ext)
+  img(src="/images"+path+ext srcset="/images"+path+ext+" 1x, "+"/images"+path+"@2x"+ext+" 2x")&attributes(attributes)
+
+mixin navItem(name, path, disable)
+  li(class=(key == path) ? 'current' : '')
+    a(href=(path == 'home') ? '/' : '/'+path+'/')= name
+    if block
+      block

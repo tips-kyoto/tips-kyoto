@@ -1,0 +1,6 @@
+@mixin font_size ($n) {
+  @for $i from 8 through $n {
+    .u-fs-#{$i} { font-size: #{$i}px !important; }
+  }
+}
+@include font_size(40);

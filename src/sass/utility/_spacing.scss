@@ -1,0 +1,27 @@
+@mixin margin-top ($n) {
+  @for $i from 0 through $n {
+    .u-mt-#{$i * 5} { margin-top: #{$i * 5}px !important; }
+  }
+}
+@include margin-top(20);
+
+@mixin margin-bottom ($n) {
+  @for $i from 0 through $n {
+    .u-mb-#{$i * 5} { margin-bottom: #{$i * 5}px !important; }
+  }
+}
+@include margin-bottom(20);
+
+@mixin padding-top ($n) {
+  @for $i from 0 through $n {
+    .u-pt-#{$i * 5} { padding-top: #{$i * 5}px !important; }
+  }
+}
+@include padding-top(20);
+
+@mixin padding-bottom ($n) {
+  @for $i from 0 through $n {
+    .u-pb-#{$i * 5} { padding-bottom: #{$i * 5}px !important; }
+  }
+}
+@include padding-bottom(20);

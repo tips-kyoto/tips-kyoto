@@ -1,0 +1,22 @@
+.l-wrapper {
+  overflow: hidden;
+  margin: 0 auto;
+  min-width: $content_width;
+
+  @include max-screen($break_point_max) {
+    min-width: 0;
+  }
+}
+
+.l-main {
+}
+
+.l-container {
+  margin: 0 auto;
+  padding: 0 $content_padding;
+  width: $content_width;
+
+  @include max-screen($break_point_max) {
+    width: 100%;
+  }
+}

@@ -1,0 +1,38 @@
+meta(charset="UTF-8")
+meta(http-equiv="X-UA-Compatible" content="IE=edge")
+meta(name="viewport", content="width=device-width, initial-scale=1")
+title #{page.title}
+meta(name="description", content= page.description)
+meta(property="og:type", content="website")
+meta(property="og:url", content= page.url)
+meta(property="og:description", content= page.description)
+meta(property="og:image", content= ogImage)
+meta(property="og:title", content= page.title)
+meta(property="og:site_name", content= siteName)
+meta(property="fb:app_id", content=appId)
+meta(name="twitter:card" content="summary_large_image")
+meta(name="twitter:site" content=twitter)
+meta(name="twitter:title", content= page.title)
+meta(name="twitter:description" content= page.description)
+meta(name="twitter:image" content= ogImage)
+meta(name="apple-mobile-web-app-capable" content="yes")
+
+link(rel="icon" sizes="16x16 32x32" href= favicon)
+|
+|<!--[if IE]>
+link(rel="shortcut icon" href= favicon)
+|<![endif]-->
+
+//- Optional: Android & iPhone
+link(rel="apple-touch-icon-precomposed" href= icon152)
+//- Optional: IE10 Tile.
+meta(name="msapplication-TileColor" content="#FFFFFF")
+meta(name="msapplication-TileImage" content= icon144)
+//- Optional: ipads, androids, iphones, ...
+link(rel="apple-touch-icon-precomposed" sizes="256x256" href= icon256)
+link(rel="apple-touch-icon-precomposed" sizes="152x152" href= icon152)
+link(rel="apple-touch-icon-precomposed" sizes="144x144" href= icon144)
+link(rel="apple-touch-icon-precomposed" sizes="120x120" href= icon120)
+link(rel="apple-touch-icon-precomposed" sizes="114x114" href= icon114)
+link(rel="apple-touch-icon-precomposed" sizes="72x72" href= icon72)
+link(rel="apple-touch-icon-precomposed" href= icon57)

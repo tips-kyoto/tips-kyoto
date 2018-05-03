@@ -1,4 +1,4 @@
-/.gitignore merge=ours
+.gitignore merge=ours
 
 *.otf binary
 *.eot binary

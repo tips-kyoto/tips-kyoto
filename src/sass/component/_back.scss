@@ -1,0 +1,32 @@
+.c-back {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+
+  &__info {
+    font-size: (30 / 375 * 100vw);
+    height: (324 / 375 * 100vw);
+    left: calc(50% + #{(162 / 375 * 100vw)});
+    line-height: (36 / 30);
+    position: fixed;
+    top: 24px;
+    width: (330 / 375 * 100vw);
+
+    p {
+      transform: rotate(90deg);
+      transform-origin: 0 0;
+    }
+  }
+
+  &__browserName {
+    bottom: 50px;
+    color: #FFF;
+    font-size: (30 / 375 * 100vw);
+    left: 0;
+    position: fixed;
+    text-align: center;
+    width: 100%;
+  }
+}

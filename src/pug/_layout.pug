@@ -8,13 +8,18 @@ html(lang="ja")
 
   body#body(class='p-'+key)
     #wrapper.l-wrapper
-      include /_modules/_header
 
-      main#main.l-main
-        block main
-      //- end of main
+      .l-browser
+        include /_modules/_header
 
-      include /_modules/_footer
+        main#main.l-main
+          block main
+        //- end of main
+
+        include /_modules/_footer
+
+      include /_component/_back
+
 
     include /_modules/_footer_link
   //- end of body

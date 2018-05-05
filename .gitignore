@@ -1,4 +1,4 @@
 node_modules
-htdocs/css
-htdocs/js
-htdocs/**/*.html
+docs/css
+docs/js
+docs/**/*.html

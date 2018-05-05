@@ -1,0 +1,32 @@
+.c-exhibitor {
+  margin-top: 100px;
+
+  h2 {
+    color: $aqua;
+    @include fs(40 / 16);
+    text-align: right;
+  }
+
+  &__block {
+    margin-top: 40px;
+
+    img {
+      display: block;
+    }
+
+    h3 {
+      @include fs(15 / 16);
+      margin-top: 20px;
+
+      span {
+        border-bottom: 1px solid #000;
+        display: inline-block;
+      }
+    }
+
+    p {
+      line-break: strict;
+      margin-top: 10px;
+    }
+  }
+}

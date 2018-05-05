@@ -1,0 +1,85 @@
+.c-outline {
+  padding-top: 25px;
+  position: relative;
+
+  &:before {
+    animation: marquee 90s linear 0s forwards;
+    background: url("../images/tips_tape.svg") no-repeat left 15px top;
+    content: " ";
+    height: 787px;
+    left: 140px;
+    opacity: .9;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    transform: translateX(-130%);
+    width: 602px;
+  }
+
+  &__logo {
+    margin: 0 10px;
+
+    img {
+      height: 101px;
+      width: 237px;
+    }
+  }
+
+  &__info {
+    margin: 0 10px;
+
+    h2 {
+      height: 0;
+      visibility: hidden;
+    }
+
+    p {
+      @include fs(18 / 16);
+      line-height: (28 / 18);
+      margin-top: 15px;
+    }
+
+    a {
+      border-bottom: 1px solid #000;
+    }
+
+    em {
+      border-bottom: 2px solid #000;
+      display: inline-block;
+      @include fs(36 / 16);
+      font-style: normal;
+      font-weight: normal;
+    }
+  }
+
+  &__event {
+    border: 1px solid #000;
+    margin: 94px 10px 0;
+    padding: 15px 20px;
+
+    h2 {
+      height: 0;
+      visibility: hidden;
+    }
+
+    strong {
+      @include fs(20 / 16);
+      font-weight: normal;
+    }
+
+    dl {
+      @include fs(14 / 16);
+      line-height: (24 / 14);
+      margin-top: 15px;
+    }
+  }
+
+  &__statement {
+    line-height: (28 / 15);
+    margin-top: 110px;
+
+    p {
+      text-align: justify;
+    }
+  }
+}

@@ -5,10 +5,15 @@ select,
 textarea {
   color: $color__text-main;
   font-family: $font__main;
-  @include font-size(1);
+  @include font-size(($font__size / 16px));
   line-height: $font__line-height-body;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  @include max-screen($break_point_max) {
+    @include font-size(($font__size-sp / 16px));
+    line-height: $font__line-height-sp;
+  }
 }
 
 h1, h2, h3, h4, h5, h6 {

@@ -1,0 +1,11 @@
+.c-icon {
+  background-position: left center;
+  background-repeat: no-repeat;
+  display: inline-block;
+  padding-left: 1em;
+
+  &.map {
+    background-image: url("../images/icon_map.svg");
+    background-size: 10px 16px;
+  }
+}

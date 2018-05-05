@@ -1,0 +1,24 @@
+.c-info {
+  margin-top: 100px;
+
+  &:after {
+    background: url("../images/tips_logo.svg") no-repeat center;
+    background-size: contain;
+    content: " ";
+    display: block;
+    height: 101px;
+    margin-left: auto;
+    margin-top: 100px;
+    margin-right: 10px;
+    width: 237px;
+  }
+
+  h2 {
+    height: 0;
+    visibility: hidden;
+  }
+
+  h3 {
+    @include fs(15 / 16);
+  }
+}

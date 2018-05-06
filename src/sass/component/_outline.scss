@@ -2,6 +2,10 @@
   padding-top: 25px;
   position: relative;
 
+  @include min-screen($break_point_min) {
+    padding-top: 50px;
+  }
+
   &:before {
     animation: marquee 90s linear 0s forwards;
     background: url("../images/tips_tape.svg") no-repeat left 15px top;
@@ -19,14 +23,28 @@
   &__logo {
     margin: 0 10px;
 
+    @include min-screen($break_point_min) {
+      margin: 0;
+    }
+
     img {
+      display: block;
       height: 101px;
       width: 237px;
+
+      @include min-screen($break_point_min) {
+        height: 151px;
+        width: 354px;
+      }
     }
   }
 
   &__info {
-    margin: 0 10px;
+    margin: 30px 10px 0;
+
+    @include min-screen($break_point_min) {
+      margin: 50px 0 0;
+    }
 
     h2 {
       height: 0;
@@ -37,18 +55,24 @@
       @include fs(18 / 16);
       line-height: (28 / 18);
       margin-top: 15px;
+
+      &:first-of-type {
+        margin-top: 0;
+      }
+
+      @include min-screen($break_point_min) {
+        @include fs(30 / 16);
+        line-height: (46 / 30);
+        margin-top: 30px;
+      }
     }
 
     a {
       border-bottom: 1px solid #000;
-    }
 
-    em {
-      border-bottom: 2px solid #000;
-      display: inline-block;
-      @include fs(36 / 16);
-      font-style: normal;
-      font-weight: normal;
+      @include min-screen($break_point_min) {
+        border-bottom-width: 2px;
+      }
     }
   }
 
@@ -56,6 +80,21 @@
     border: 1px solid #000;
     margin: 94px 10px 0;
     padding: 15px 20px;
+
+    @include min-screen($break_point_min) {
+      margin-left: 0;
+      margin-right: 0;
+      padding: 13px 13px 15px;
+    }
+
+    @include min-screen(921px) {
+      margin: 0;
+      max-width: calc(100% - 620px);
+      position: absolute;
+      right: 50px;
+      top: 260px;
+      width: 420px;
+    }
 
     h2 {
       height: 0;
@@ -65,18 +104,50 @@
     strong {
       @include fs(20 / 16);
       font-weight: normal;
+
+      @include min-screen($break_point_min) {
+        color: $aqua;
+        @include fs(24 / 16);
+      }
     }
 
     dl {
       @include fs(14 / 16);
       line-height: (24 / 14);
       margin-top: 15px;
+
+      @include min-screen($break_point_min) {
+        display: flex;
+        flex-wrap: wrap;
+      }
+    }
+
+    dt {
+      @include min-screen($break_point_min) {
+        width: 100px;
+      }
+    }
+
+    dd {
+      @include min-screen($break_point_min) {
+        width: calc(100% - 100px);
+      }
+
+      span {
+        display: inline-block;
+      }
     }
   }
 
   &__statement {
     line-height: (28 / 15);
     margin-top: 110px;
+
+    @include min-screen($break_point_min) {
+      column-count: 2;
+      column-gap: 40px;
+      line-height: (30 / 15);
+    }
 
     p {
       text-align: justify;

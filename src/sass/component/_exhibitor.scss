@@ -1,14 +1,34 @@
 .c-exhibitor {
   margin-top: 100px;
 
+  @include min-screen($break_point_min) {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 50px;
+    margin-left: -25px;
+  }
+
   h2 {
     color: $aqua;
     @include fs(40 / 16);
     text-align: right;
+
+    @include min-screen($break_point_min) {
+      display: none;
+    }
   }
 
   &__block {
     margin-top: 40px;
+
+    @include min-screen($break_point_min) {
+      margin-top: 50px;
+      margin-left: 25px;
+      width: calc(#{(100% / 2)} - 25px);
+    }
+    @include min-screen(921px) {
+      width: calc(#{(100% / 3)} - 25px);
+    }
 
     img {
       display: block;

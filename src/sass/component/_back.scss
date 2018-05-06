@@ -1,4 +1,5 @@
 .c-back {
+  font-family: $helvetica;
   height: 100%;
   left: 0;
   position: absolute;
@@ -13,6 +14,15 @@
     position: fixed;
     top: 24px;
     width: (350 / 375 * 100vw);
+
+    @include min-screen($break_point_min) {
+      @include fs(36 / 16);
+      height: 378px;
+      line-height: (43 / 36);
+      top: 28px;
+      left: 398px;
+      width: 420px;
+    }
 
     p {
       transform: rotate(90deg);

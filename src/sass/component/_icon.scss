@@ -6,6 +6,7 @@
 
   &.map {
     background-image: url("../images/icon_map.svg");
-    background-size: 10px 16px;
+    background-size: (10 / 18 * 1em) (16 / 18 * 1em);
+    padding-left: (16 / 18 * 1em);
   }
 }

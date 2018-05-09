@@ -53,8 +53,9 @@
 
     p {
       @include fs(18 / 16);
-      line-height: (28 / 18);
+      line-height: (32 / 18);
       margin-top: 15px;
+      transform: scale(1, 0.92);
 
       &:first-of-type {
         margin-top: 0;
@@ -62,7 +63,7 @@
 
       @include min-screen($break_point_min) {
         @include fs(30 / 16);
-        line-height: (46 / 30);
+        line-height: (52 / 30);
         margin-top: 30px;
       }
     }
@@ -104,9 +105,11 @@
     strong {
       @include fs(20 / 16);
       font-weight: normal;
+      transform: scale(1, 0.94);
 
       @include min-screen($break_point_min) {
         color: $aqua;
+        transform: scale(1, 0.94);
         @include fs(24 / 16);
       }
     }
@@ -142,6 +145,7 @@
   &__statement {
     line-height: (28 / 15);
     margin-top: 110px;
+    transform: scale(1, 0.94);
 
     @include min-screen($break_point_min) {
       column-count: 2;

@@ -31,6 +31,7 @@ $gutter: 25px;
 
   &.col3 {
     width: calc(#{(100% / 3)} - #{$gutter});
+    transform: scale(1, 0.96);
 
     @include max-screen(920px) {
       width: calc(#{(100% / 2)} - #{$gutter});

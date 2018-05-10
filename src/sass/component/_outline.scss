@@ -111,7 +111,6 @@
     strong {
       @include fs(20 / 16);
       font-weight: normal;
-      transform: scale(1, 0.96);
 
       @include min-screen($break_point_min) {
         color: $aqua;
@@ -145,6 +144,10 @@
       span {
         display: inline-block;
       }
+    }
+
+    p, dt, dd {
+      transform: scale(1, 0.96);
     }
   }
 

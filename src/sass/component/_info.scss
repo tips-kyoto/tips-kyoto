@@ -37,5 +37,10 @@
 
   h3 {
     @include fs(15 / 16);
+    transform: scale(1, 0.96);
+  }
+
+  p {
+    transform: scale(1, 0.96);
   }
 }

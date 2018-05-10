@@ -9,14 +9,16 @@ html(lang="ja")
   body#body(class='p-'+key)
     #wrapper.l-wrapper
 
-      .l-browser
+      .l-browser.js-draggable
         include /_modules/_header
 
-        main#main.l-main
-          block main
-        //- end of main
+        .l-browser__inner
 
-        include /_modules/_footer
+          main#main.l-main
+            block main
+          //- end of main
+
+          include /_modules/_footer
 
       include /_component/_back
 

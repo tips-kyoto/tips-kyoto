@@ -1,7 +1,12 @@
 .l-header {
+  cursor: move;
   font-family: $helvetica;
-  text-align: center;
+  left: 0;
   padding: 11px 15px 15px;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  width: 100%;
 
   @include min-screen($break_point_min) {
     background: #F0F0F0;

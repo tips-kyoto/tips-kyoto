@@ -13,3 +13,16 @@ $helveticaMedium: "HelveticaNeueMedium", "HelveticaNeue-Medium", "Helvetica Neue
 
 $sans-serif: "ヒラギノ角ゴ Pro W3", "HiraKakuProN-W3", "Hiragino Kaku Gothic Pro", "游ゴシック", "Yu Gothic", "游ゴシック体", "YuGothic", sans-serif;
 $serif: "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "游明朝", "Yu Mincho", "游明朝体", "YuMincho", "HG明朝E", serif;
+$founders: 'FoundersGroteskWeb', $helvetica;
+
+@font-face {
+  font-family: 'FoundersGroteskWeb';
+  src: url('../fonts/FoundersGroteskWeb-Regular.eot?#iefix'); // IE9 Compat Modes
+  src: local('FoundersGroteskWeb-Regular'),
+       url('../fonts/FoundersGroteskWeb-Regular.eot?#iefix') format('eot'),
+       url('../fonts/FoundersGroteskWeb-Regular.woff2') format('woff2'),
+       url('../fonts/FoundersGroteskWeb-Regular.woff') format('woff'); // Modern Browsers
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}

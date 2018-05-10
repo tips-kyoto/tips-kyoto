@@ -8,7 +8,7 @@
     height: (324 / 375 * 100vw);
     left: calc(50% + #{(162 / 375 * 100vw)});
     line-height: (36 / 30);
-    position: fixed;
+    position: absolute;
     top: 24px;
     width: (350 / 375 * 100vw);
 
@@ -32,7 +32,7 @@
     color: #FFF;
     font-size: (30 / 375 * 100vw);
     left: 0;
-    position: fixed;
+    position: absolute;
     text-align: center;
     width: 100%;
   }

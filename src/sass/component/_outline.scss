@@ -8,7 +8,8 @@
 
   &:before {
     animation: marquee 90s linear 0s forwards;
-    background: url("../images/tips_tape.svg") no-repeat left 15px top;
+    background: url("../images/tips_tape.svg") no-repeat left top;
+    background-size: contain;
     content: " ";
     height: 787px;
     left: 140px;
@@ -18,6 +19,7 @@
     top: 0;
     transform: translateX(-130%);
     width: 602px;
+    z-index: 1;
   }
 
   &__logo {
@@ -73,6 +75,10 @@
 
       @include min-screen($break_point_min) {
         border-bottom-width: 2px;
+      }
+
+      &:hover {
+        border-bottom-color: $aqua;
       }
     }
   }

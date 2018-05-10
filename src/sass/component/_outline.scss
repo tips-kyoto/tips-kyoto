@@ -40,10 +40,10 @@
   }
 
   &__info {
-    margin: 30px 10px 0;
+    margin: 50px 10px 0;
 
     @include min-screen($break_point_min) {
-      margin: 50px 0 0;
+      margin: 100px 0 0;
     }
 
     h2 {
@@ -79,7 +79,7 @@
 
   &__event {
     border: 1px solid #000;
-    margin: 94px 10px 0;
+    margin: 50px 10px 0;
     padding: 15px 20px;
 
     @include min-screen($break_point_min) {
@@ -93,7 +93,7 @@
       max-width: calc(100% - 620px);
       position: absolute;
       right: 50px;
-      top: 260px;
+      top: 310px;
       width: 420px;
     }
 
@@ -105,11 +105,11 @@
     strong {
       @include fs(20 / 16);
       font-weight: normal;
-      transform: scale(1, 0.94);
+      transform: scale(1, 0.96);
 
       @include min-screen($break_point_min) {
         color: $aqua;
-        transform: scale(1, 0.94);
+        transform: scale(1, 0.96);
         @include fs(24 / 16);
       }
     }
@@ -144,8 +144,8 @@
 
   &__statement {
     line-height: (28 / 15);
-    margin-top: 110px;
-    transform: scale(1, 0.94);
+    margin-top: 80px;
+    transform: scale(1, 0.96);
 
     @include min-screen($break_point_min) {
       column-count: 2;

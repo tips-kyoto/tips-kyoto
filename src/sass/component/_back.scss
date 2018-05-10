@@ -35,5 +35,9 @@
     position: absolute;
     text-align: center;
     width: 100%;
+
+    span {
+      text-transform: capitalize;
+    }
   }
 }

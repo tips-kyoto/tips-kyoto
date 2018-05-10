@@ -1,10 +1,34 @@
 (function(){
   var $body = $('body');
-  var ua = navigator.userAgent.toLowerCase();
   var windowW = $(window).width();
   var windowH = $(window).outerHeight();
 
-  // anchor link
+
+  function checkUserAgent() {
+    // UserAgentChecker
+    // @link https://github.com/mtskf/UserAgentChecker
+
+    window._uac = {}; // define _uac as a global object
+    var ua = window.navigator.userAgent.toLowerCase();
+    var ver = window.navigator.appVersion.toLowerCase();
+
+    // check browser version
+    _uac.browser = (function(){
+      if (ua.indexOf('edge') !== -1)           return 'Microsoft Edge';    // Edge
+      else if (ua.indexOf("iemobile") !== -1)  return 'IE Mobile';         // ieMobile
+      else if (ua.indexOf('trident/7') !== -1) return 'Internet Explorer'; // ie11
+      else if (ua.indexOf("msie") !== -1 && ua.indexOf('opera') === -1)     return 'Internet Explorer'; // ie6~10
+      else if (ua.indexOf('chrome')  !== -1 && ua.indexOf('edge') === -1)   return 'Chrome';            // Chrome
+      else if (ua.indexOf('safari')  !== -1 && ua.indexOf('chrome') === -1) return 'Safari';            // Safari
+      else if (ua.indexOf('opera')   !== -1)   return 'Opera';             // Opera
+      else if (ua.indexOf('firefox') !== -1)   return 'Firefox';           // FIrefox
+      else return 'Browser';
+    })();
+
+    var browserName = (_uac.browser !== '') ? _uac.browser : 'Browser';
+    $('#browserName').text(browserName);
+  }
+
   function anchorLink() {
     $(document).on('click', 'a[href^="#"]', function(e) {
       e.preventDefault();
@@ -76,6 +100,7 @@
 
   // fire when DOM is ready
   $(function() {
+    checkUserAgent();
     anchorLink();
     // navControl();
     draggable();

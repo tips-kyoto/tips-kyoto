@@ -76,6 +76,10 @@
       @include min-screen($break_point_min) {
         border-bottom-width: 2px;
       }
+
+      &:hover {
+        border-bottom-color: $aqua;
+      }
     }
   }
 

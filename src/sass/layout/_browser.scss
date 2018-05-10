@@ -27,6 +27,10 @@
     left: calc(50% - 600px);
   }
 
+  &.is-hidden {
+    display: none;
+  }
+
   &__inner {
     height: 100%;
     overflow-x: hidden;

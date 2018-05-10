@@ -65,6 +65,14 @@
     $('.js-100vh').css('height', windowH);
   }
 
+  function onClick() {
+    $('.js-close').on('click', function(e) {
+      var self = e.currentTarget;
+      var $parent = $(self).parents('.js-draggable');
+      $parent.addClass('is-hidden');
+    });
+  }
+
 
   // fire when DOM is ready
   $(function() {
@@ -72,6 +80,7 @@
     // navControl();
     draggable();
     calcHeight();
+    onClick();
   });
 
   // fire when page is fully loaded

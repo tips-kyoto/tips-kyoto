@@ -27,6 +27,10 @@
   clear: both;
 }
 
+@mixin font-scale() {
+  transform: scale(1, 0.96);
+}
+
 // Media queries
 @mixin max-screen($break-point) {
   @media screen and (max-width: $break-point) {

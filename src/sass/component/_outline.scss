@@ -22,11 +22,19 @@
     z-index: 1;
   }
 
+  &__inner {
+    @include min-screen($break_point_min) {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+
   &__logo {
     margin: 0 10px;
 
     @include min-screen($break_point_min) {
       margin: 0;
+      width: 100%;
     }
 
     img {
@@ -45,7 +53,11 @@
     margin: 50px 10px 0;
 
     @include min-screen($break_point_min) {
+      width: 100%;
+    }
+    @include min-screen(1091px) {
       margin: 100px 0 0;
+      width: 50%;
     }
 
     h2 {
@@ -66,7 +78,7 @@
       @include min-screen($break_point_min) {
         @include fs(30 / 16);
         line-height: (52 / 30);
-        margin-top: 30px;
+        margin-top: 25px;
       }
     }
 
@@ -84,82 +96,96 @@
   }
 
   &__event {
-    border: 1px solid #000;
-    margin: 50px 10px 0;
-    padding: 15px 20px;
+    margin-top: 40px;
 
     @include min-screen($break_point_min) {
-      margin-left: 0;
-      margin-right: 0;
-      padding: 13px 13px 15px;
+      width: 100%;
     }
 
-    @include min-screen(921px) {
-      margin: 0;
-      max-width: calc(100% - 620px);
-      position: absolute;
-      right: 50px;
-      top: 310px;
-      width: 420px;
+    @include min-screen(1091px) {
+      margin-top: -120px;
+      margin-left: 20px;
+      width: calc(50% - 20px);
+    }
+
+    &_inner {
+      border-top: 2px solid $aqua;
+      border-bottom: 2px solid $aqua;
+      margin-top: 3px;
+      padding: 30px 10px;
+
+      @include min-screen($break_point_min) {
+        column-count: 2;
+        column-gap: 40px;
+        padding-left: 0;
+        padding-right: 0;
+      }
+      @include min-screen(1091px) {
+        column-gap: 10px;
+
+      }
+    }
+
+    h2, h3 {
+      color: $aqua;
+      @include font-scale;
     }
 
     h2 {
-      height: 0;
-      visibility: hidden;
-    }
-
-    strong {
-      @include fs(20 / 16);
-      font-weight: normal;
+      @include fs(36 / 16);
+      padding: 0 10px;
+      text-align: right;
 
       @include min-screen($break_point_min) {
-        color: $aqua;
-        transform: scale(1, 0.96);
-        @include fs(24 / 16);
+        @include fs(40 / 16);
+        padding: 0;
       }
     }
 
-    dl {
-      @include fs(14 / 16);
-      line-height: (24 / 14);
+    h3 {
+      @include fs(20 / 16);
       margin-top: 15px;
 
+      &:first-child {
+        margin-top: 0;
+      }
+
       @include min-screen($break_point_min) {
-        display: flex;
-        flex-wrap: wrap;
       }
     }
 
-    dt {
+    p {
+      line-height: (28 / 15);
+      margin-top: 3px;
+      @include font-scale;
+
       @include min-screen($break_point_min) {
-        width: 100px;
       }
     }
 
-    dd {
-      @include min-screen($break_point_min) {
-        width: calc(100% - 100px);
-      }
-
-      span {
-        display: inline-block;
-      }
-    }
-
-    p, dt, dd {
-      transform: scale(1, 0.96);
+    span {
+      display: inline-block;
     }
   }
 
   &__statement {
-    line-height: (28 / 15);
-    margin-top: 80px;
-    transform: scale(1, 0.96);
+    line-height: (28 / 15 * 0.96);
+    margin-top: 60px;
 
     @include min-screen($break_point_min) {
-      column-count: 2;
-      column-gap: 40px;
       line-height: (30 / 15);
+      margin-top: 50px;
+      width: 100%;
+    }
+
+    &_inner {
+      line-height: (28 / 15);
+      @include font-scale;
+
+      @include min-screen($break_point_min) {
+        column-count: 2;
+        column-gap: 40px;
+      }
     }
 
     p {

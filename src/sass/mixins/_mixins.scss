@@ -50,6 +50,27 @@
   }
 }
 
+@mixin retina() {
+  @media screen and (min-device-pixel-ratio: 1.5),
+         screen and (-o-min-device-pixel-ratio: 3/2),
+         screen and (-webkit-min-device-pixel-ratio: 1.5),
+         screen and (min-device-pixel-ratio: 1.5)
+  {
+    @content;
+  }
+}
+
+@mixin min-screen-retina() {
+  @media screen and (min-width: $break_point_min),
+         screen and (min-device-pixel-ratio: 1.5),
+         screen and (-o-min-device-pixel-ratio: 3/2),
+         screen and (-webkit-min-device-pixel-ratio: 1.5),
+         screen and (min-device-pixel-ratio: 1.5)
+  {
+    @content;
+  }
+}
+
 @mixin img2x($image, $extension, $size, $position: center, $repeat: no-repeat) {
   background: url($image + '.' + $extension) $repeat $position;
   background-size: $size;

@@ -61,5 +61,9 @@
     span {
       text-transform: capitalize;
     }
+
+    @include min-screen(1220px) {
+      @include fs(100 / 16);
+    }
   }
 }

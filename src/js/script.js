@@ -80,6 +80,7 @@
 
     $('.js-draggable').draggable({
       handle: '.js-dragHandle',
+      cancel: '.js-close',
       scroll: false
     });
 

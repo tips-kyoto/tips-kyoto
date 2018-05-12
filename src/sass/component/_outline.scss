@@ -17,9 +17,17 @@
     pointer-events: none;
     position: absolute;
     top: 96px;
-    transform: translateX(-130%);
     width: 602px;
     z-index: 1;
+
+    @include min-screen($break_point_min) {
+      animation: marquee2 120s linear 0s forwards;
+      left: auto;
+      right: 10%;
+    }
+    @include min-screen(1221px) {
+      animation: marquee3 120s linear 0s forwards;
+    }
   }
 
   &__inner {

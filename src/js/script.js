@@ -1,7 +1,9 @@
 (function(){
   var $body = $('body');
-  var windowW = $(window).width();
-  var windowH = $(window).outerHeight();
+  var $header = $('#header');
+  var $window = $(window);
+  var windowW = $window.width();
+  var windowH = $window.outerHeight();
 
 
   function checkUserAgent() {
@@ -84,7 +86,7 @@
   }
 
   function calcHeight() {
-    windowH = $(window).outerHeight();
+    windowH = $window.outerHeight();
 
     $('.js-100vh').css('height', windowH);
   }
@@ -101,6 +103,61 @@
     });
   }
 
+  function resizeHeader() {
+    var $browser = $('.js-browser');
+    var $browserHeader = $browser.find('header');
+    var $browserInner = $browser.find('.js-browserInner');
+
+    var resizeTimeoutId = 0;
+    var headerHeight = $header.outerHeight();
+
+    addScrollEvent();
+    addResizeEvent();
+
+    function addResizeEvent() {
+      removeResizeEvent();
+      $window.on('resize.resizeHeader', function(e) {
+        removeScrollEvent();
+        clearTimeout(resizeTimeoutId);
+        resizeTimeoutId = setTimeout(function() {
+          addScrollEvent();
+        }, 100);
+      });
+    }
+
+    function removeResizeEvent() {
+      clearTimeout(resizeTimeoutId);
+      $window.off('resize.resizeHeader');
+    }
+
+
+    function addScrollEvent() {
+      removeScrollEvent();
+      $browserInner.on('scroll.resizeHeader', function() {
+        setHeaderFixed();
+      });
+      setHeaderFixed();
+    }
+
+    function removeScrollEvent() {
+      $browserInner.off('scroll.resizeHeader');
+    }
+
+
+    function setHeaderFixed() {
+      var currentTop = $browserInner.scrollTop();
+      trigger = $browserHeader.outerHeight() / 2;
+
+      if(currentTop > trigger){
+        $browserHeader.addClass('is-shrink');
+      } else {
+        $browserHeader.removeClass('is-shrink');
+      }
+    }
+
+
+  }
+
 
   // fire when DOM is ready
   $(function() {
@@ -110,6 +167,7 @@
     draggable();
     calcHeight();
     onClick();
+    resizeHeader();
   });
 
   // fire when page is fully loaded

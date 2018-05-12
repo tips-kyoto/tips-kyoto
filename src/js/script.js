@@ -95,6 +95,10 @@
       var $parent = $(self).parents('.js-draggable');
       $parent.addClass('is-hidden');
     });
+
+    $('#js-reload').on('click', function() {
+      location.reload();
+    });
   }
 
 

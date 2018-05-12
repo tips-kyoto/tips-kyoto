@@ -27,6 +27,28 @@
     }
   }
 
+  &__reload {
+    bottom: 150px;
+    left: calc(50% - 30px);
+    position: absolute;
+
+    @include min-screen($break_point_min) {
+      bottom: calc(50% - 30px);
+    }
+
+    button {
+      background: $aqua url("../images/icon_reload.svg") no-repeat center;
+      background-size: 21px 22px;
+      border: 0;
+      border-radius: 50%;
+      color: transparent;
+      font-size: 0;
+      height: 60px;
+      padding: 0;
+      width: 60px;
+    }
+  }
+
   &__browserName {
     bottom: 50px;
     color: #FFF;

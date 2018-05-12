@@ -1,15 +1,21 @@
 .l-header {
+  border-bottom: 1px solid #e1e4e8;
   cursor: move;
   font-family: $founders;
   left: 0;
-  padding: 11px 15px 15px;
+  padding: 11px 10px 10px;
   position: absolute;
   text-align: center;
   top: 0;
   width: 100%;
 
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background-color: rgba(255,255,255, .7);
+  z-index: 10;
+
   @include min-screen($break_point_min) {
-    background: #F0F0F0;
+    background-color: rgba(#F0F0F0, .7);
     padding: 10px 20px;
   }
 
@@ -19,7 +25,7 @@
 
     @include min-screen($break_point_min) {
       @include fs(15 / 16);
-      margin-bottom: 16px;
+      margin-bottom: 7px;
     }
   }
 
@@ -27,14 +33,17 @@
     background: $gray;
     border-radius: 10px;
     color: $aqua;
-    @include fs(18 / 16);
-    line-height: 40px;
+    @include fs(20 / 16);
+    line-height: 33px;
+    padding-bottom: 2px;
 
     @include min-screen($break_point_min) {
       background: #FFF;
       border: 1px solid $aqua;
       border-radius: 4px;
-      line-height: 28px;
+      @include fs(18 / 16);
+      line-height: 23px;
+      padding-bottom: 3px;
     }
   }
 
@@ -46,8 +55,8 @@
     display: block;
     font-size: 0;
     height: 20px;
+    left: 7px;
     position: absolute;
-    right: 7px;
     top: 7px;
     width: 20px;
 
@@ -55,7 +64,6 @@
       background: $red;
       border-radius: 50%;
       left: 10px;
-      right: auto;
       top: 10px;
     }
 

@@ -1,4 +1,8 @@
-$color__background-body: #fff;
+$gray: #E6E6E6;
+$aqua: #89CAEF;
+$red: #D0021B;
+
+$color__background-body: rgba(155,155,155,1);
 $color__background-screen: #f1f1f1;
 $color__background-hr: #ccc;
 $color__background-button: #e6e6e6;
@@ -8,9 +12,9 @@ $color__background-ins: #fff9c0;
 $color__text-screen: #21759b;
 $color__text-input: #666;
 $color__text-input-focus: #111;
-$color__link: #0000ff;
-$color__link-visited: #0000ff;
-$color__link-hover: #0000ff;
+$color__link: #000;
+$color__link-visited: #000;
+$color__link-hover: $aqua;
 $color__text-main: #000;
 
 $color__border-button: #ccc #ccc #bbb;

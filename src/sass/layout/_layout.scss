@@ -1,10 +1,8 @@
 .l-wrapper {
   overflow: hidden;
-  margin: 0 auto;
-  min-width: $content_width;
+  position: relative;
 
   @include max-screen($break_point_max) {
-    min-width: 0;
   }
 }
 
@@ -12,11 +10,15 @@
 }
 
 .l-container {
-  margin: 0 auto;
-  padding: 0 $content_padding;
-  width: $content_width;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: $content_padding;
+  padding-right: $content_padding;
+  max-width: $content_width;
 
   @include max-screen($break_point_max) {
+    padding-left: $content_padding_sp;
+    padding-right: $content_padding_sp;
     width: 100%;
   }
 }

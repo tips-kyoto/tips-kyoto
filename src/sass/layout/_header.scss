@@ -1,3 +1,139 @@
 .l-header {
+  border-bottom: 1px solid #e1e4e8;
+  cursor: move;
+  font-family: $founders;
+  left: 0;
+  padding: 11px 10px 10px;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  transition: all .2s ease;
+  width: 100%;
 
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background-color: rgba(255,255,255, .7);
+  z-index: 10;
+
+  @include retina {
+    border-bottom-width: .5px;
+  }
+
+  @include min-screen($break_point_min) {
+    background-color: rgba(#F0F0F0, .7);
+    padding: 10px 20px;
+  }
+
+  &.is-shrink {
+    @include max-screen($break_point_max) {
+      height: 35px;
+      padding-top: 5px;
+      padding-bottom: 5px;
+    }
+  }
+
+  &__tabName {
+    @include fs(12 / 16);
+    margin-bottom: 11px;
+    transition: all .2s ease;
+
+    @include min-screen($break_point_min) {
+      @include fs(15 / 16);
+      margin-bottom: 7px;
+    }
+
+    @at-root {
+      .is-shrink & {
+        @include max-screen($break_point_max) {
+          height: 0;
+          margin-bottom: 0;
+          opacity: 0;
+        }
+      }
+    }
+  }
+
+  &__url {
+    background: $gray;
+    border-radius: 10px;
+    color: $aqua;
+    @include fs(20 / 16);
+    line-height: 33px;
+    padding-bottom: 2px;
+    transform: translateZ(0);
+    transition: all .2s ease;
+
+    @include min-screen($break_point_min) {
+      background: #FFF;
+      border: 1px solid $aqua;
+      border-radius: 4px;
+      @include fs(18 / 16);
+      line-height: 23px;
+      padding-bottom: 3px;
+    }
+    @include min-screen-retina {
+      border-width: .5px;
+    }
+
+    @at-root {
+      .is-shrink & {
+        @include max-screen($break_point_max) {
+          background: transparent;
+          transform: scale(.7);
+          transform-origin: top;
+        }
+      }
+    }
+  }
+
+  &__close {
+    appearance: none;
+    background: none;
+    border: 0;
+    color: transparent;
+    display: block;
+    font-size: 0;
+    height: 30px;
+    left: 2px;
+    position: absolute;
+    top: 2px;
+    transform: translateZ(0);
+    width: 30px;
+
+    @include min-screen($break_point_min) {
+      background: #ed6a5e;
+      border: 1px solid #C6483C;
+      border-radius: 50%;
+      height: 16px;
+      left: 12px;
+      top: 12px;
+      width: 16px;
+
+      &:hover {
+        border-color: #C6483C;
+      }
+    }
+    @include min-screen-retina {
+      border-width: .5px;
+    }
+
+    &:before,
+    &:after {
+      background: #000;
+      content: " ";
+      height: 2px;
+      left: 5px;
+      position: absolute;
+      top: 14px;
+      transform: rotate(45deg);
+      width: 20px;
+
+      @include min-screen($break_point_min) {
+        content: none;
+      }
+    }
+    &:after {
+      transform: rotate(-45deg);
+    }
+  }
 }

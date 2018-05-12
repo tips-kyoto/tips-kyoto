@@ -1,0 +1,63 @@
+.c-exhibitor {
+  margin-top: 60px;
+
+  @include min-screen($break_point_min) {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    margin-left: -25px;
+  }
+
+  h2 {
+    color: $aqua;
+    @include fs(40 / 16);
+    line-height: 1.1;
+    text-align: right;
+    @include font-scale;
+
+    @include min-screen($break_point_min) {
+      display: none;
+    }
+  }
+
+  &__block {
+    margin-top: 40px;
+
+    @include max-screen($break_point_max) {
+      &:first-of-type {
+        margin-top: 20px;
+      }
+    }
+
+    @include min-screen($break_point_min) {
+      margin-top: 50px;
+      margin-left: 25px;
+      width: calc(#{(100% / 2)} - 25px);
+    }
+    @include min-screen(921px) {
+      width: calc(#{(100% / 3)} - 25px);
+    }
+
+    img {
+      display: block;
+    }
+
+    h3 {
+      @include fs(15 / 16);
+      margin-top: 20px;
+      @include font-scale;
+      line-height: 1.8;
+
+      span {
+        border-bottom: 1px solid #000;
+        display: inline-block;
+      }
+    }
+
+    p {
+      line-break: strict;
+      @include font-scale;
+      margin-top: 10px;
+    }
+  }
+}

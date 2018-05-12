@@ -4,9 +4,8 @@
   }
 }
 .u-sp-hide {
-  display: none;
-  @include min-screen($break_point_min) {
-    display: inline !important;
+  @include max-screen($break_point_max) {
+    display: none !important;
   }
 }
 

@@ -1,3 +1,19 @@
 .l-footer {
+  padding: 45px 0 60px;
 
+  @include min-screen($break_point_min) {
+    padding-top: 30px;
+  }
+
+  &__logo {
+    img {
+      display: block;
+      margin: 0 auto;
+      width: 183px;
+
+      @include min-screen($break_point_min) {
+        margin-right: 50px;
+      }
+    }
+  }
 }

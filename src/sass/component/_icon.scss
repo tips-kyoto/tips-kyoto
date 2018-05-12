@@ -2,27 +2,15 @@
   background-position: left center;
   background-repeat: no-repeat;
   display: inline-block;
-  padding-left: 30px;
+  padding-left: 1em;
 
-  &.pin {
-    background-image: url(../images/icon_pin.svg);
-    background-position: left 2px center;
-    background-size: 10px auto;
-    padding-left: 20px;
-  }
+  &.map {
+    background-image: url("../images/icon_map.svg");
+    background-size: (10 / 18 * 1em) (16 / 18 * 1em);
+    padding-left: (16 / 18 * 1em);
 
-  &.instagram {
-    background-image: url(../images/icon_instagram.svg);
-    background-size: 19px auto;
-  }
-
-  &.facebook {
-    background-image: url(../images/icon_facebook.svg);
-    background-size: 19px auto;
-  }
-
-  &.twitter {
-    background-image: url(../images/icon_twitter.svg);
-    background-size: 20px auto;
+    &:hover {
+      background-image: url("../images/icon_map_blue.svg");
+    }
   }
 }

@@ -1,34 +1,7 @@
 ul, ol {
   list-style: none;
-	margin: 0 0 1em;
-  padding: 0 0 0 1em;
-}
-
-ul > li {
-  position: relative;
-
-  &:before {
-    background: $color__text-main;
-    border-radius: 4px;
-    content: " ";
-    display: block;
-    height: 8px;
-    left: -1em;
-    position: absolute;
-    top: .5em;
-    width: 8px;
-  }
-}
-
-ol > li {
-  counter-increment : number;
-  position: relative;
-
-  &:before {
-    content: counter(number) ".";
-    display: inline-block;
-    margin-left: -1em;
-  }
+	margin: 0;
+  padding: 0;
 }
 
 li > ul,
@@ -38,40 +11,13 @@ li > ol {
 }
 
 dl {
-  margin: 0 auto 30px;
-  &:before,
-  &:after {
-    @include clearfix;
-  }
-  &:after {
-    @include clearfix-after;
-  }
+  margin: 0;
 }
 
 dt {
-  clear: left;
 	font-weight: normal;
-  float: left;
-  width: 100px;
-
-  &:not(:first-of-type) {
-  }
-
-  p:last-child {
-    margin: 0;
-  }
 }
 
 dd {
-  clear: right;
-  float: left;
 	margin: 0;
-  width: calc(100% - 100px);
-
-  &:not(:first-of-type) {
-  }
-
-  p:last-child {
-    margin: 0;
-  }
 }

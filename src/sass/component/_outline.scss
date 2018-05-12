@@ -1,0 +1,213 @@
+.c-outline {
+  padding-top: 25px;
+  position: relative;
+
+  @include min-screen($break_point_min) {
+    padding-top: 50px;
+  }
+
+  &:before {
+    animation: marquee 90s linear 0s forwards;
+    background: url("../images/tips_tape.svg") no-repeat left top;
+    background-size: contain;
+    content: " ";
+    height: 787px;
+    left: 140px;
+    opacity: .9;
+    pointer-events: none;
+    position: absolute;
+    top: 96px;
+    width: 602px;
+    z-index: 1;
+
+    @include min-screen($break_point_min) {
+      animation: marquee2 120s linear 0s forwards;
+      left: auto;
+      right: 10%;
+    }
+    @include min-screen(1221px) {
+      animation: marquee3 120s linear 0s forwards;
+    }
+  }
+
+  &__inner {
+    @include min-screen($break_point_min) {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+
+  &__logo {
+    margin: 0 10px;
+
+    @include min-screen($break_point_min) {
+      margin: 0;
+      width: 100%;
+    }
+
+    img {
+      display: block;
+      height: 101px;
+      width: 237px;
+
+      @include min-screen($break_point_min) {
+        height: 151px;
+        width: 354px;
+      }
+    }
+  }
+
+  &__info {
+    margin: 50px 10px 0;
+
+    @include min-screen($break_point_min) {
+      width: 100%;
+    }
+    @include min-screen(1091px) {
+      margin: 100px 0 0;
+      width: 50%;
+    }
+
+    h2 {
+      height: 0;
+      visibility: hidden;
+    }
+
+    p {
+      @include fs(18 / 16);
+      line-height: (32 / 18);
+      margin-top: 15px;
+      transform: scale(1, 0.92);
+
+      &:first-of-type {
+        margin-top: 0;
+      }
+
+      @include min-screen($break_point_min) {
+        @include fs(30 / 16);
+        line-height: (52 / 30);
+        margin-top: 25px;
+      }
+    }
+
+    a {
+      border-bottom: 1px solid #000;
+
+      @include min-screen($break_point_min) {
+        border-bottom-width: 2px;
+      }
+
+      &:hover {
+        border-bottom-color: $aqua;
+      }
+    }
+  }
+
+  &__event {
+    margin-top: 40px;
+
+    @include min-screen($break_point_min) {
+      width: 100%;
+    }
+
+    @include min-screen(1091px) {
+      margin-top: -132px;
+      margin-left: 20px;
+      width: calc(50% - 20px);
+    }
+
+    &_inner {
+      border-top: 2px solid $aqua;
+      border-bottom: 2px solid $aqua;
+      margin-top: 3px;
+      padding: 30px 10px;
+
+      @include min-screen($break_point_min) {
+        display: flex;
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+
+    &_column {
+      @include min-screen($break_point_min) {
+        width: calc(50% - 20px);
+        margin-left: 40px;
+
+        &:first-child {
+          margin-left: 0;
+        }
+      }
+      @include min-screen(1091px) {
+        width: calc(50% - 5px);
+        margin-left: 10px;
+      }
+    }
+
+    h2, h3 {
+      color: $aqua;
+      @include font-scale;
+    }
+
+    h2 {
+      @include fs(36 / 16);
+      padding: 0 10px;
+      text-align: right;
+
+      @include min-screen($break_point_min) {
+        @include fs(40 / 16);
+        padding: 0;
+      }
+    }
+
+    h3 {
+      @include fs(20 / 16);
+      margin-top: 15px;
+
+      &:first-child {
+        margin-top: 0;
+      }
+
+      @include min-screen($break_point_min) {
+      }
+    }
+
+    p {
+      line-height: (28 / 15);
+      margin-top: 3px;
+      @include font-scale;
+
+      @include min-screen($break_point_min) {
+      }
+    }
+
+    span {
+      display: inline-block;
+    }
+  }
+
+  &__statement {
+    line-height: (28 / 15 * 0.96);
+    margin-top: 60px;
+
+    @include min-screen($break_point_min) {
+      line-height: (30 / 15);
+      margin-top: 50px;
+      width: 100%;
+    }
+
+    &_inner {
+      line-height: (28 / 15);
+      @include font-scale;
+
+      @include min-screen($break_point_min) {
+        column-count: 2;
+        column-gap: 40px;
+      }
+    }
+
+    p {
+      text-align: justify;
+    }
+  }
+}

@@ -1,26 +1,34 @@
 // Rem output with px fallback
 @mixin font-size($sizeValue: 1) {
-	font-size: ($sizeValue * 16) * 1px;
-	font-size: $sizeValue * 1rem;
+  font-size: ($sizeValue * 16) * 1px;
+  font-size: $sizeValue * 1rem;
+}
+@mixin fs($sizeValue: 1) {
+  font-size: ($sizeValue * 16) * 1px;
+  font-size: $sizeValue * 1rem;
 }
 
 // Center block
 @mixin center-block {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 // Clearfix
 @mixin clearfix() {
-	content: "";
-	display: table;
-	table-layout: fixed;
+  content: "";
+  display: table;
+  table-layout: fixed;
 }
 
 // Clear after (not all clearfix need this also)
 @mixin clearfix-after() {
-	clear: both;
+  clear: both;
+}
+
+@mixin font-scale() {
+  transform: scale(1, 0.96);
 }
 
 // Media queries
@@ -38,6 +46,27 @@
 
 @mixin screen($break-point-min, $break-point-max) {
   @media screen and (min-width: $break-point-min) and (max-width: $break-point-max) {
+    @content;
+  }
+}
+
+@mixin retina() {
+  @media screen and (min-device-pixel-ratio: 1.5),
+         screen and (-o-min-device-pixel-ratio: 3/2),
+         screen and (-webkit-min-device-pixel-ratio: 1.5),
+         screen and (min-device-pixel-ratio: 1.5)
+  {
+    @content;
+  }
+}
+
+@mixin min-screen-retina() {
+  @media screen and (min-width: $break_point_min),
+         screen and (min-device-pixel-ratio: 1.5),
+         screen and (-o-min-device-pixel-ratio: 3/2),
+         screen and (-webkit-min-device-pixel-ratio: 1.5),
+         screen and (min-device-pixel-ratio: 1.5)
+  {
     @content;
   }
 }

@@ -1,8 +1,36 @@
-$( function() {
+(function(){
   var $body = $('body');
-  var ua = navigator.userAgent.toLowerCase();
+  var $header = $('#header');
+  var $window = $(window);
+  var windowW = $window.width();
+  var windowH = $window.outerHeight();
 
-  // anchor link
+
+  function checkUserAgent() {
+    // UserAgentChecker
+    // @link https://github.com/mtskf/UserAgentChecker
+
+    window._uac = {}; // define _uac as a global object
+    var ua = window.navigator.userAgent.toLowerCase();
+    var ver = window.navigator.appVersion.toLowerCase();
+
+    // check browser version
+    _uac.browser = (function(){
+      if (ua.indexOf('edge') !== -1)           return 'Microsoft Edge';    // Edge
+      else if (ua.indexOf("iemobile") !== -1)  return 'IE Mobile';         // ieMobile
+      else if (ua.indexOf('trident/7') !== -1) return 'Internet Explorer'; // ie11
+      else if (ua.indexOf("msie") !== -1 && ua.indexOf('opera') === -1)     return 'Internet Explorer'; // ie6~10
+      else if (ua.indexOf('chrome')  !== -1 && ua.indexOf('edge') === -1)   return 'Chrome';            // Chrome
+      else if (ua.indexOf('safari')  !== -1 && ua.indexOf('chrome') === -1) return 'Safari';            // Safari
+      else if (ua.indexOf('opera')   !== -1)   return 'Opera';             // Opera
+      else if (ua.indexOf('firefox') !== -1)   return 'Firefox';           // FIrefox
+      else return 'Browser';
+    })();
+
+    var browserName = (_uac.browser !== '') ? _uac.browser : 'Browser';
+    $('#browserName').text(browserName);
+  }
+
   function anchorLink() {
     $(document).on('click', 'a[href^="#"]', function(e) {
       e.preventDefault();
@@ -48,15 +76,115 @@ $( function() {
 
   }
 
+  function draggable() {
+
+    $('.js-draggable').draggable({
+      handle: '.js-dragHandle',
+      cancel: '.js-close',
+      scroll: false
+    });
+
+  }
+
+  function calcHeight() {
+    windowH = $window.outerHeight();
+
+    $('.js-100vh').css('height', windowH);
+  }
+
+  function onClick() {
+    $('.js-close').on('click', function(e) {
+      var self = e.currentTarget;
+      var $parent = $(self).parents('.js-draggable');
+      $parent.addClass('is-hidden');
+    });
+
+    $('#js-reload').on('click', function() {
+      location.reload();
+    });
+  }
+
+  function resizeHeader() {
+    var $browser = $('.js-browser');
+    var $browserHeader = $browser.find('header');
+    var $browserInner = $browser.find('.js-browserInner');
+
+    var resizeTimeoutId = 0;
+    var headerHeight = $header.outerHeight();
+
+    addScrollEvent();
+    addResizeEvent();
+
+    function addResizeEvent() {
+      removeResizeEvent();
+      $window.on('resize.resizeHeader', function(e) {
+        removeScrollEvent();
+        clearTimeout(resizeTimeoutId);
+        resizeTimeoutId = setTimeout(function() {
+          addScrollEvent();
+        }, 100);
+      });
+    }
+
+    function removeResizeEvent() {
+      clearTimeout(resizeTimeoutId);
+      $window.off('resize.resizeHeader');
+    }
+
+
+    function addScrollEvent() {
+      removeScrollEvent();
+      $browserInner.on('scroll.resizeHeader', function() {
+        setHeaderFixed();
+      });
+      setHeaderFixed();
+    }
+
+    function removeScrollEvent() {
+      $browserInner.off('scroll.resizeHeader');
+    }
+
+
+    function setHeaderFixed() {
+      var currentTop = $browserInner.scrollTop();
+      trigger = $browserHeader.outerHeight() / 2;
+
+      if(currentTop > trigger){
+        $browserHeader.addClass('is-shrink');
+      } else {
+        $browserHeader.removeClass('is-shrink');
+      }
+    }
+
+
+  }
+
 
   // fire when DOM is ready
   $(function() {
+    checkUserAgent();
     anchorLink();
-    navControl();
+    // navControl();
+    draggable();
+    calcHeight();
+    onClick();
+    resizeHeader();
   });
 
   // fire when page is fully loaded
   $(window).on('load',function(){
   });
 
-});
+  // fire when window resize completed
+  var timer = false;
+  $(window).on('resize', function() {
+    if (timer !== false) {
+      clearTimeout(timer);
+    }
+    timer = setTimeout( function() {
+      calcHeight();
+    } , 100);
+  });
+
+
+})()

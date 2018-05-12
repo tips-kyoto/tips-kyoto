@@ -2,8 +2,98 @@ extends /_layout
 
 block vars
   include /_config
-  - var key = "home"
-  - var page = pages[key]
+  - var key = "home";
+  - var page = pages[key];
 
 block main
+  section.c-outline
+    .l-container
+      .c-outline__inner
+        h1.c-outline__logo
+          img(src="/images/tips_logo.svg" alt="Tips")
+
+        .c-outline__info
+          h2 概要
+          p 2018年6月1日(金) ― 7月16日(月)<br>
+            a.c-icon.map(href="https://goo.gl/maps/DQJfbHdreA62" target="_blank") 京都芸術センター
+          p.
+            池田剛介 熊谷卓哉
+            <br>小松千倫 三野新 宮坂直樹による
+
+        section.c-outline__event
+          h2 関連企画
+          .c-outline__event_inner
+            .c-outline__event_column
+              h3 アーティスト・トーク
+              p.
+                日時：6月2日（土）15:00 - 17:00
+                <br>会場：ミーティングルーム２
+                <br>料金：入場無料、事前申込不要
+                <br>ゲストスピーカー：長谷川新<br class="u-pc-hide">（インディペンデント・キュレーター）
+              h3 レセプション
+              p.
+                日時：6月2日（土）17:00-18:00
+                <br>会場：ミーティングルーム２
+                <br>料金：入場無料、事前申込不要
+            .c-outline__event_column
+              h3 レクチャー
+              p.
+                日時：6月23日（土）16:00-
+                <br>会場：ミーティングルーム２
+                <br>料金：入場無料、事前申込不要
+                <br>ゲスト：髙濱史子（建築家）
+              h3 パフォーマンス<br>『Prepared for FILM』<span>三野新</span>
+              p.
+                2018年6月3日（日）15:00-16:00
+                <br>※入場無料・事前申込不要
+
+        .c-outline__statement
+          .c-outline__statement_inner
+            p.
+              ビスや釘ではなくクランプで固定する。脚立を台座代わりにする。写真をテープやクリップで留める。時折インスタレーションには興味深いささやかな技法を発見することができる。これらの技法は、それ自体が表現の核心になるのではなく、脇役として全体の中で機能している様に感じられる。本展では、このようなインスタレーションのささやかな技法をTipsと名付ける。インスタレーションについて本展では、便宜的に広義のインスタレーションと、ミニマリズムの客体性の肯定的な後継として、またポスト・メディウム的状況の議論の中で語られるインスタレーション・アートを区別し、広義のインスタレーションに焦点を当てる。広義のインスタレーションは、近代的な絵画や彫刻などの形式から滲出して展開する作品である。絵画や彫刻の形式とは何か。例えば絵画の額、彫刻の台座は作品に含まれないものとして見做される。額や台座は、作品を中立的に鑑賞させる役割が要求されるので、見えないものとして存在しなければならない。広義のインスタレーション作品においても、見えないものが存在しないわけではない。中空に作品を固定するワイヤー、まとめられた電気コードやこれを隠すモール、暗室の中のプロジェクターは見えないものと扱われることがある。しかしインスタレーションにおいては、見えないものを作品の一部(あるいは全体)として取り込むか否かを選択することが可能である。Tipsはインスタレーションのささやかな技法のみを意味するのではなく、インスタレーションの要訣として、アーティストによる任意の作品領域の決定が可能であることを意味する。本展の作品はTips（ささやかな技法）によってTips（任意の作品領域の決定）を成す。
+
   .l-container
+    section.c-exhibitor
+      h2 出展者
+
+      .c-exhibitor__block
+        img(src="/images/prof_ikeda.jpg" alt="池田剛介(いけだ・こうすけ)")
+        h3: span: a(href="http://kosukeikeda.net/" target="_blank") 池田剛介(いけだ・こうすけ)
+        p 1980年福岡県生まれ。東京藝術大学大学院美術研究科修士課程修了。自然現象、生態系、エネルギーなどへの関心をめぐりながら制作を行う。主な展覧会に「Malformed Objects ―― 無数の異なる身体のためのブリコラージュ」(山本現代、2017)、「Regeneration Movement」(国立台湾美術館、2016)、あいちトリエンナーレ2013」「堂島リバービエンナーレ2011」などがある。
+
+      .c-exhibitor__block
+        img(src="/images/prof_komatsu.jpg" alt="小松千倫(こまつ・かずみち)")
+        h3: span: a(href="http://kazumichi-komastu.tumblr.com/" target="_blank") 小松千倫(こまつ・かずみち)
+        p(lang="ja") 1992年高知県生まれ。2009年より楽曲の制作を開始、国内外で複数の作品を発表している。近年は美術家・金氏徹平の舞台作品やファションレーベルPUGMENTの音楽を担当。また空間の特徴を解析し、インスタレーションや音響作品を展開する。主な展覧会に「FAKEBOOK」(Workstation. 、2016年)、「シンフォニーLDK」(京都市立芸術大学ギャラリー@KCUA、2017年)などがある。
+
+      .c-exhibitor__block
+        img(src="/images/prof_kumagai.jpg" alt="熊谷卓哉(くまがい・たくや)")
+        h3: span: a(href="https://www.namisagashitekkara.com/" target="_blank") 熊谷卓哉(くまがい・たくや)
+        p 1987年京都府生まれ。京都府在住。武蔵野美術大学造形学部彫刻学科卒業。美術家、特に彫刻領域に言及。制作活動の傍ら京都にてアーティスト・ラン・スペース「波さがしてっから」を共同運営、展示企画を行う。主な展覧会に「ウッホッホウホウホアートショー」(波さがしてっから、2016年)、「3/2, 4」(Bambinart Gallery、2015年)などがある。
+
+      .c-exhibitor__block
+        img(src="/images/prof_mino.jpg" alt="三野 新(みの・あらた)")
+        h3: span: a(href="https://www.aratamino.com/" target="_blank") 三野 新(みの・あらた)
+        p 1987年福岡県生まれ。ニカサン主宰。写真家、劇作家、演出家。「恐怖の予感を視覚化する」ことをテーマに作家活動を行っており、物語・写真行為・演劇を横断的に試行/思考しながら制作している。主な受賞歴にフェスティバル/トーキョー12’公募プログラム選出、第2回・第4回写真「1_WALL」展入賞、第17回AAF戯曲賞ファイナリストなどがある。
+
+      .c-exhibitor__block
+        img(src="/images/prof_miyasaka.jpg" alt="宮坂直樹(みやさか・なおき)")
+        h3: span: a(href="http://www.naokimiyasaka.com/" target="_blank") 宮坂直樹(みやさか・なおき)
+        p  1985年千葉県生まれ。京都府在住。東京藝術大学大学院美術研究科博士課程修了。認識の方法によって様々に現れる空間の概念を基に、空間構成を研究する。また、ヴェルニッサージュのグラスやギャラリーのベンチなど、現代美術におけるデザインを手がける。主な展覧会に「Exercise for Death」(ARTZONE、2017年)、「空間越え」(遊工房アートスペース、2012年)などがある。
+
+    section.c-info
+      h2 開催情報
+      .l-columnWrap
+        .l-column.col3
+          h3 KAC TRIAL PROJECT / Co-program 2018
+          p.
+            カテゴリーB「共同開催」(展覧会事業)採択企画」
+            <br>主催：宮坂直樹、京都芸術センター
+            <br>助成：アーツサポート関西
+            <br>宣伝美術：<a href="http://shunishizuka.com/" target="_blank">石塚俊</a>
+        .l-column.col3
+          h3 京都芸術センター
+          p.
+            京都市中京区室町通蛸薬師下る山伏山町546-2
+            <br>〈四条駅〉〈烏丸駅〉22・24番出口より徒歩5分
+            <br>TEL 075-213-1000 <a href="//www.kac.or.jp" target="_blank">WWW.KAC.OR.JP</a>

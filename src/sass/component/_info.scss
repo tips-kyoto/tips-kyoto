@@ -1,0 +1,46 @@
+.c-info {
+  margin-top: 100px;
+
+  @include min-screen($break_point_min) {
+    margin-top: 70px;
+    position: relative;
+  }
+
+  &:after {
+    background: url("../images/tips_logo.svg") no-repeat center;
+    background-size: contain;
+    content: " ";
+    display: block;
+    height: 101px;
+    margin-left: auto;
+    margin-top: 100px;
+    margin-right: 10px;
+    width: 237px;
+
+    @include min-screen($break_point_min) {
+      height: 151px;
+      left: calc(#{(100% / 2)} + #{(25px / 2)});
+      margin: 0;
+      position: absolute;
+      top: -220px;
+      width: 354px;
+    }
+    @include min-screen(921px) {
+      left: calc(#{(100% * 2 / 3)} + #{(25px * 2 / 3)});
+    }
+  }
+
+  h2 {
+    height: 0;
+    visibility: hidden;
+  }
+
+  h3 {
+    @include fs(15 / 16);
+    @include font-scale;
+  }
+
+  p {
+    @include font-scale;
+  }
+}

@@ -68,12 +68,12 @@
       width: 50%;
     }
 
-    h2 {
+    h1 {
       height: 0;
       visibility: hidden;
     }
 
-    p {
+    h2, h3 {
       @include fs(18 / 16);
       line-height: (32 / 18);
       margin-top: 15px;

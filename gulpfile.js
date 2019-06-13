@@ -20,10 +20,10 @@ var paths = {
   'pug'   : 'src/pug/',
   'scss'  : 'src/sass/',
   'jsSrc' : 'src/js/',
-  'html'  : 'docs/',
-  'css'   : 'docs/css/',
-  'js'    : 'docs/js/',
-  'image' : 'docs/images/',
+  'html'  : './',
+  'css'   : 'assets/css/',
+  'js'    : 'assets/js/',
+  'image' : 'assets/images/',
 };
 
 //setting : Pug Options
